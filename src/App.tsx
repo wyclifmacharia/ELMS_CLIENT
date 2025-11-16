@@ -1,5 +1,5 @@
 import { RouterProvider } from 'react-router/dom'
-import { createBrowserRouter } from 'react-router'
+import { createHashRouter, } from 'react-router'
 import './App.css'
 import Error from './components/error/Error'
 import { Register } from './components/auth/Register'
@@ -11,7 +11,7 @@ import { Services } from './components/hero/Service '
 
 function App() {
 
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: '/',
       element:<h1><LandingPage/> </h1>
