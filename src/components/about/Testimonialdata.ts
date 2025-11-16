@@ -1,5 +1,5 @@
 import story1 from '../../assets/images/story1.webp';
-import story2 from '../../assets/images/story2.webp'
+import story2 from '../../assets/images/story2.webp';
 
 type Testimonial = {
     id: number;
@@ -13,44 +13,43 @@ export const testimonialsData: Testimonial[] = [
     {
         id: 1,
         name: 'John Doe',
-        role: 'Project Manager',
+        role: 'HR Manager',
         image: story1,
-        content: 'TodoPro has transformed the way our team collaborates. The intuitive interface and powerful features make task management a breeze.',
+        content: 'The Employee Leave Management System has made handling leave requests seamless. Approvals, tracking, and managing records are now faster and more accurate.',
     },
     {
         id: 2,
         name: 'Jane Smith',
         role: 'Software Engineer',
         image: story2,
-        content: 'With TodoPro, I can easily track my tasks and deadlines. It has significantly improved my productivity and helped me stay organized.',
+        content: 'Applying for leave is now so easy. I can track my requests, view my leave balance, and get updates instantly without needing to contact HR.',
     },
     {
         id: 3,
         name: 'Michael Brown',
         role: 'UI/UX Designer',
         image: story1,
-        content: 'The clean design and user-friendly experience of TodoPro make it my go-to tool for managing creative projects.',
+        content: 'I love how clean and intuitive the system is. The dashboard makes it easy to see upcoming leave days and check request status at a glance.',
     },
     {
         id: 4,
         name: 'Emily Davis',
         role: 'QA Analyst',
         image: story2,
-        content: 'TodoPro helps me keep track of testing cycles and bug reports efficiently. Highly recommended for any QA team!',
+        content: 'The ELMS has helped our team stay organized. Tracking approvals and ensuring leave compliance is now a smooth and error-free process.',
     },
     {
         id: 5,
         name: 'David Wilson',
-        role: 'DevOps Engineer',
+        role: 'Team Lead',
         image: story1,
-        content: 'Integrating TodoPro into our workflow has streamlined our deployment process and improved team communication.',
+        content: 'Reviewing and approving leave requests is now effortless. The platform gives a clear overview of team availability, preventing workflow interruptions.',
     },
     {
         id: 6,
         name: 'Sophia Lee',
-        role: 'Product Owner',
+        role: 'HR Administrator',
         image: story2,
-        content: 'TodoPro gives me a clear overview of project progress and helps prioritize tasks for the team.',
+        content: 'Managing employee leave records used to be time-consuming. With ELMS, everything is automated, accessible, and well-organized.',
     },
- 
 ];
