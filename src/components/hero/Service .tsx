@@ -11,7 +11,7 @@ export const Services = () => {
 
             <div className="w-full md:w-1/2 flex flex-col gap-6">
                 <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gray-600"> Our Services</h2>
-                <p className="mb-4 text-gray-700 text-base md:text-lg">Discover the range of services TodoPro offers to help your team stay organized and productive. From task management to real-time collaboration, we have you covered!</p>
+                <p className="mb-4 text-gray-700 text-base md:text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque optio repellendus sunt voluptates aliquid possimus unde, omnis similique saepe fugiat dignissimos qui dicta tempora odio vitae delectus magnam atque ullam?</p>
                 <div>
                     {/* daisyui */}
                     <div className="overflow-x-auto">

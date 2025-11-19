@@ -2,9 +2,9 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist"
 import storage from "redux-persist/lib/storage"
-import { employeAPI } from "../feautures/auth/employeAPI";
-// import { loginAPI } from "../features/auth/loginAPI";
-import employeSlice from '../feautures/auth/employeSlice'
+import { employeAPI } from "../feautures/auths/employeAPI";
+import { loginAPI } from "../feautures/auths/loginAPI";
+import employeSlice from '../feautures/auths/employeSlice'
 // import { todosAPI } from "../features/todo/todoAPI";
 
 
@@ -17,7 +17,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({ //combining all reducers into one root reducer
     [employeAPI.reducerPath]: employeAPI.reducer,
-    // [loginAPI.reducerPath]: loginAPI.reducer,
+     [loginAPI.reducerPath]: loginAPI.reducer,
     // [todosAPI.reducerPath]: todosAPI.reducer,
     user: employeSlice
 })
@@ -30,7 +30,7 @@ export const store = configureStore({
         serializableCheck: false
     })
         .concat(employeAPI.middleware)
-        // .concat(loginAPI.middleware)
+        .concat(loginAPI.middleware)
         // .concat(todosAPI.middleware)
     // 
 })

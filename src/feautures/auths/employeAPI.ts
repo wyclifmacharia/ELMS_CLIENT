@@ -7,7 +7,7 @@ export type TUser = {
     first_name: string
     last_name: string
     email: string
-    department_id: string
+    department_id: number
     hashed_pass: string
     role: string
     date_joined: Date;
@@ -23,7 +23,7 @@ export const employeAPI = createApi({ // sets up API endpoints for user manageme
     endpoints: (builder) => ({
         createEmployees: builder.mutation<{ message: string }, Partial<TUser>>({
             query: (newUser) => ({
-                url: '/Employees',
+                url: '/addEmployees',
                 method: 'POST',
                 body: newUser
             }),
@@ -31,7 +31,7 @@ export const employeAPI = createApi({ // sets up API endpoints for user manageme
         }),
         verifyUser: builder.mutation<{ message: string }, { email: string, code: string }>({
             query: (data) => ({
-                url: '/verify',
+                url: '/verifyEmployee',
                 method: 'POST',
                 body: data
             }),

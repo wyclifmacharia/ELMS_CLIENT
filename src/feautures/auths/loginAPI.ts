@@ -5,12 +5,13 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export type TLoginResponse = {
     message: string,
     token: string,
-    user: {
-        user_id: number,
+    employee: {
+        employee_id: number,
         first_name: string,
         last_name: string,
         email: string,
-        phone_number: string,
+        department_id: string,
+        isActive: boolean,
         role: string
     }
 }
@@ -18,7 +19,7 @@ export type TLoginResponse = {
 // inputs to login
 type LoginInputs = {
     email: string;
-    password: string;
+    hashed_pass: string;
 }
 
 export const loginAPI = createApi({
@@ -28,7 +29,7 @@ export const loginAPI = createApi({
     endpoints: (builder) => ({
         loginUser: builder.mutation<TLoginResponse, LoginInputs>({
             query: (loginData) => ({
-                url: '/login',
+                url: '/loginEmployee',
                 method: 'POST',
                 body: loginData
             }),

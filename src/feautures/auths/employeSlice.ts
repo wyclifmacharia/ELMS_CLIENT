@@ -7,6 +7,7 @@ export type EmployeState = {
         employee_id: number;
         first_name: string;
         last_name: string;
+        hashed_pass: string;
         email: string;
         department_id: string;
         role: string;

@@ -3,14 +3,14 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router";
-import { employeAPI } from "../../feautures/auth/employeAPI";
+import { employeAPI } from "../../feautures/auths/employeAPI";
 import { toast } from "sonner"
 
 type RegisterInputs = {
   first_name: string;
   last_name: string;
   email: string;
-  department_id: string; // keep as string for input
+  department_id: number;
   role: string;
   date_joined: Date;
   hashed_pass: string;
@@ -28,7 +28,7 @@ const schema = yup.object({
     .required("Confirm password is required"),
   role: yup.string().max(50, "Max 50 characters").required("Role is required"),
   date_joined: yup.date().max(new Date(), "Date cannot be in the future").required("Date joined is required"),
-  department_id: yup.string().max(20, "Max 20 characters").required("Department ID is required"),
+  department_id: yup.number().required("Department ID is required"),
 });
 
 export const Register = () => {
@@ -44,12 +44,11 @@ export const Register = () => {
 
 
   const onSubmit: SubmitHandler<RegisterInputs> = async (data) => {
-    // convert department_id to number
-    const payload = { ...data, department_id: Number(data.department_id) };
-    console.log(payload);
+ 
+    // console.log("payload", payload);
     try {
             const response = await createEmployee(data).unwrap()
-            // console.log("Response", response);
+             console.log("Response", response);
             toast.success(response.message)
 
             // redirect the user to verify
