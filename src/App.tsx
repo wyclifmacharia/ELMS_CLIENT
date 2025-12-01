@@ -8,6 +8,8 @@ import { Verification } from './components/auth/Verification'
 import LandingPage from './pages/LandingPage'
 import { AboutPage } from './pages/AboutPage'
 import { Services } from './components/hero/Service '
+import { Toaster } from "sonner"   
+import AdminDashboard from './dashboard/AdminDashboard/content/AdminDashboard'
 
 function App() {
 
@@ -47,15 +49,50 @@ function App() {
     {
       path: '*',
       element:<h1><Error/> </h1>
+   },
+   //admin Dashboard
+   {
+   path: '/admin/dashboard',
+   element:<AdminDashboard/>,
+
+   children: [
+    {
+      path:'leaveRequest',
+      element:<h1> Welcome to Admin Dashboard </h1>
+
+    },
+    {
+      path:'Employe',
+      element:<h1> Welcome Admin Dashboard </h1>
+
+    },{
+      path:'profile',
+      element:<h1> Welcome to  Dashboard </h1>
+
+    },
+    {
+      path:'analytics',
+      element:<h1> Welcome to Admin  </h1>
+
+    }
+
+
+
+
+
+
+
+
+
+   ]
    }
-    
 
   ])
  
 
   return (
    <>
-
+   <Toaster richColors position="top-right" />  
    <RouterProvider router = {router} />
 
   </>

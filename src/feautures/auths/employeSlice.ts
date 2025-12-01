@@ -26,7 +26,7 @@ const employeSlice = createSlice({ // createSlice is a function that creates a s
     reducers: { //a reducer is a function that takes the current state and an action, and returns a new state
         loginSuccess: (state, action) => {
             state.token = action.payload.token; // the token is set when the user logs in successfully
-            state.Employe = action.payload.user // the user is set when the user logs in successfully
+            state.Employe = action.payload.employee // the user is set when the user logs in successfully
         },
         logOut: (state) => {
             state.token = null;

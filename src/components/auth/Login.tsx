@@ -35,8 +35,9 @@ export const Login = () => {
         try {
 
             const response = await loginUser(data).unwrap()
-             console.log(response);
+            console.log(response);
             toast.success(response.message)
+            console.log("TOAST SHOULD FIRE");
             // dispatch- store user info
             dispatch(loginSuccess(response))
 
@@ -48,8 +49,8 @@ export const Login = () => {
 
 
         }catch(error:any){
-            console.error("Login error", error);
-            toast.error(error?.data?.message || "Login failed")
+            console.error(error.data.error);
+            toast.error(error?.data?.message)
         }
     }
 
